@@ -1,0 +1,18 @@
+body {
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+
+label{
+  display: block;
+  padding: 10px;
+}
+
+button{
+  margin: 10px;
+}
+

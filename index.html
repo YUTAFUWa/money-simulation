@@ -1,0 +1,58 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Money-Simulation</title>
+  </head>
+
+  <body>
+    <h1>Money-Simulation</h1>
+
+    <section>
+      <h2>いくらになるか？</h2>
+
+      <label>元本：
+        <input class="principal__cost" type="text" />万円
+      </label>
+
+      <label>想定利回り(年率):
+        <input class="yield__cost" type="text" />％
+      </label>
+
+      <label>運用期間(年):
+        <input class="period__cost" type="text" />年
+      </label>
+
+      <button class="checkButton__cost">ボタン</button>
+
+      <div class="answer__cost"></div>
+    </section>
+
+    <section>
+      <h2>いくら必要か？</h2>
+
+      <label>想定利回り(年率):
+        <input class="yield__need" type="text" />％
+      </label>
+
+      <label>目標金額：
+        <input class="principal__need" type="text" />万円
+      </label>
+
+      <label>運用期間(年):
+        <input class="period__need" type="text" />年
+      </label>
+
+      <button class="checkButton__need">ボタン</button>
+
+      <div class="answer__need"></div>
+
+    </section>
+
+
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
