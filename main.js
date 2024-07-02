@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-
   // 〜〜〜〜いくらになるか？〜〜〜〜
   const checkButton = document.querySelector('.checkButton__cost');
   const principalInput = document.querySelector('.principal__cost');
@@ -70,13 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     answer__y.innerText = `目標金額までは ${years} 年かかります。` ;
 
   })
-
-
-
-
-
-
-
 
 
 });
