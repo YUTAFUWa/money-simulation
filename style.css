@@ -5,29 +5,21 @@ body {
     "Hiragino Sans",
     Meiryo,
     sans-serif;
-}
-
-h1{
-  text-align: center;
-}
-
-h2{
-  text-align: center;
+  width: 400px;
+  margin: 0px auto;
 }
 
 label{
-  text-align: center;
   display: block;
   padding: 10px;
 }
 
 button{
   display: block;
-  margin: 10px auto;
+  margin: 10px 10px;
 }
 
 .answer{
-  text-align: center;
   font-size: large;
   color: blue;
   font-weight: bold;
@@ -68,3 +60,13 @@ button{
 #tabcontrol a:nth-child(1), #tabbody div:nth-child(1) { background-color: #ffffdd; }/* 1つ目のタブとその中身用の配色 */
 #tabcontrol a:nth-child(2), #tabbody div:nth-child(2) { background-color: #ddffdd; }/* 2つ目のタブとその中身用の配色 */
 #tabcontrol a:nth-child(3), #tabbody div:nth-child(3) { background-color: #ddddff; }/* 3つ目のタブとその中身用の配色 */
+
+
+@media screen and (max-width: 780px) {
+
+  #tabbody div {
+    margin-top: -18px;
+  }
+  
+  
+}

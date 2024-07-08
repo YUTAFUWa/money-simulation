@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+// ⬇︎⬇︎⬇︎元本を増やす⬇︎⬇︎⬇
+
   // 〜〜〜〜いくらになるか？〜〜〜〜
   const checkButton = document.querySelector('.checkButton__cost');
   const principalInput = document.querySelector('.principal__cost');
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const finalAmount = principal * Math.pow((1 + yearlyYield), period);
-    answerDiv.innerText = `最終金額は ${finalAmount.toFixed(2)} 円です。`;
+    answerDiv.innerText = `最終金額は ${(finalAmount/10000).toFixed(2)} 万円です。`;
   });
 
 
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const period = parseInt(period__n.value, 10);
 
     const finalAmount = goal / Math.pow((1 + yearlyYield), period);
-    answer__n.innerText = `必要な元本は ${finalAmount.toFixed(2)} 円です。`
+    answer__n.innerText = `必要な元本は ${(finalAmount/10000).toFixed(2)} 万円です。`
   });
 
 
@@ -70,6 +72,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })
 
+
+
+// ⬇︎⬇︎⬇︎毎月積み立てる⬇︎⬇︎⬇︎
+
+  // 〜〜〜〜いくらになるか？〜〜〜〜
+  const checkButton__m = document.querySelector('.checkButton__month');
+  const principal__m = document.querySelector('.principal__month');
+  const yield__m = document.querySelector('.yield__month');
+  const n_o_p = document.querySelector('.number_of_periods');
+  const answer__m = document.querySelector('.answer__month');
+
+  checkButton__m.addEventListener('click', () => {
+
+    const principal = principal__m.value * 10000;
+    const y_m = yield__m.value /100 /12;
+    const nop = n_o_p.value *12;
+
+    const fv = principal *  (Math.pow(1 + y_m ,nop) -1) / y_m;
+
+    answer__m.innerText = `将来価値は ${(fv/10000).toFixed(2)} 万円です`
+  })
 
 });
 

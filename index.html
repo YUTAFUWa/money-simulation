@@ -1,93 +1,108 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <p id="tabcontrol">
-    <a href="#tabpage1">いくらになるか？</a>
-    <a href="#tabpage2">いくら必要か？</a>
-    <a href="#tabpage3">目標まで何年かかるか？</a>
-  </p>
-  <div id="tabbody">
-    <div id="tabpage1">
-      <section>
-        <h2>いくらになるか？</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>マネーシミュレーション</h1>
+    </header>
+    <p id="tabcontrol">
+      <a href="#tabpage1">元本を増やす</a>
+      <a href="#tabpage2">毎月積み立てる</a>
+    </p>
+    <div id="tabbody">
 
-        <label
-          >元本： <input class="principal__cost" type="text" />万円
-        </label>
+      <!-- ⬇︎⬇︎⬇︎元本を増やす⬇︎⬇︎⬇ -->
+      <div id="tabpage1">
+        <section>
+          <h2>いくらになるか？</h2>
 
-        <label
-          >想定利回り(年率): <input class="yield__cost" type="text" />％
-        </label>
+          <label>
+            元本： <input class="principal__cost" type="text" />万円
+          </label>
 
-        <label
-          >運用期間(年): <input class="period__cost" type="text" />年
-        </label>
+          <label>
+            想定利回り(年率): <input class="yield__cost" type="text" />％
+          </label>
 
-        <button class="checkButton__cost">ボタン</button>
+          <label>
+            運用期間(年): <input class="period__cost" type="text" />年
+          </label>
 
-        <p class="answer answer__cost"></p>
-      </section>
+          <button class="checkButton__cost">ボタン</button>
+
+          <p class="answer answer__cost"></p>
+        </section>
+
+        <section>
+          <h2>いくら必要か？</h2>
+
+          <label>
+            想定利回り(年率): <input class="yield__need" type="text" />％
+          </label>
+
+          <label>
+            目標金額： <input class="goal__need" type="text" />万円
+          </label>
+
+          <label>
+            運用期間(年): <input class="period__need" type="text" />年
+          </label>
+
+          <button class="checkButton__need">ボタン</button>
+
+          <p class="answer answer__need"></p>
+        </section>
+
+        <section>
+          <h2>目標まで何年かかるか？</h2>
+
+          <label>
+            元本: <input class="principal__year" type="text" />万円
+          </label>
+
+          <label>
+            想定利回り(年率): <input class="yield__year" type="text" />％
+          </label>
+
+          <label>目標金額: <input class="goal__year" type="text" />万円 </label>
+
+          <button class="checkButton__year">ボタン</button>
+
+          <p class="answer answer__year"></p>
+        </section>
+      </div>
+
+      <!-- ⬇︎⬇︎⬇︎毎月積み立てる⬇︎⬇︎⬇︎ -->
+      <div id="tabpage2">
+        
+        <section>
+          <h2>いくらになるか？</h2>
+
+          <label>
+            毎月の積立金額: <input class="principal__month" type="text" />万円
+          </label>
+
+          <label>
+            想定利回り(年率): <input class="yield__month" type="text" />％
+          </label>
+
+          <label>積立期間(年): <input class="number_of_periods" type="text" />年 </label>
+
+          <button class="checkButton__month">ボタン</button>
+
+          <p class="answer answer__month"></p>
+        </section>
+
+      </div>
+
     </div>
+  </body>
 
-
-    <div id="tabpage2">
-      <section>
-        <h2>いくら必要か？</h2>
-
-        <label
-          >想定利回り(年率): <input class="yield__need" type="text" />％
-        </label>
-
-        <label
-          >目標金額： <input class="goal__need" type="text" />万円
-        </label>
-
-        <label
-          >運用期間(年): <input class="period__need" type="text" />年
-        </label>
-
-        <button class="checkButton__need">ボタン</button>
-
-        <p class="answer answer__need"></p>
-      </section>
-    </div>
-
-
-    <div id="tabpage3">
-      <section>
-        <h2>目標まで何年かかるか？</h2>
-
-        <label
-          >元本: <input class="principal__year" type="text" />万円
-        </label>
-
-        <label
-          >想定利回り(年率): <input class="yield__year" type="text" />％
-        </label>
-
-        <label>目標金額: <input class="goal__year" type="text" />万円 </label>
-
-        <button class="checkButton__year">ボタン</button>
-
-        <p class="answer answer__year"></p>
-      </section>
-    </div>
-
-    
-  </div>
- 
-</body>
-
-<script src="main.js"></script>
-<script src="tabs.js"></script>
-
+  <script src="main.js"></script>
+  <script src="tabs.js"></script>
 </html>
-
-
-
