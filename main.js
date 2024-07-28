@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const period = parseInt(period__n.value, 10);
 
     const finalAmount = goal / Math.pow((1 + yearlyYield), period);
-    answer__n.innerText = `必要な元本は ${(finalAmount/10000).toFixed(2)} 万円です。`
+    answer__n.innerText = `必要な元本は ${(finalAmount/10000).toFixed(2)} 万円です。`;
   });
 
 
@@ -91,8 +91,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fv = principal *  (Math.pow(1 + y_m ,nop) -1) / y_m;
 
-    answer__m.innerText = `将来価値は ${(fv/10000).toFixed(2)} 万円です`
+    answer__m.innerText = `将来価値は ${(fv/10000).toFixed(2)} 万円です`;
+  });
+
+  // 〜〜〜〜いくら積立が必要か？〜〜〜〜
+  const checkButton__mn = document.querySelector('.checkButton__month__need');
+  const answer__mn = document.querySelector('.answer__month__need');
+  const yield__mn = document.querySelector('.yield__month__need');
+  const goal__mn = document.querySelector('.goal__month__need');
+  const n_o_p_n = document.querySelector('.number_of_periods__need');
+
+  checkButton__mn.addEventListener('click', () => {
+    const yield = yield__mn.value / 100 / 12 ;
+    const goal = goal__mn.value * 10000 ;
+    const nopn = n_o_p_n.value * 12 ;
+
+    const pmt = goal * yield / (Math.pow( 1 + yield ,nopn) - 1 );
+
+    answer__mn.innerText = `毎月必要な積立金額は、${(pmt/10000).toFixed(2)}万円です`;
+
   })
+
+
+  // 〜〜〜〜いくら積立が必要か？〜〜〜〜
+  const checkButton__my = document.querySelector('.checkButton__month__year');
+  const answer__my = document.querySelector('.answer__month__year');
+  const principal__my = document.querySelector('.principal__month__year');
+  const yield__my = document.querySelector('.yield__month__year');
+  const goal__my = document.querySelector('.goal__month__year');
+  
+  checkButton__my.addEventListener('click', () => {
+    const principal = principal__my.value * 10000;
+    const yield = yield__my.value / 100 / 12 ;
+    const goal = goal__my.value * 10000 ;
+
+    const n = Math.log(( goal * yield / principal ) + 1) / Math.log( 1 + yield);
+
+    const n__years = n / 12;
+
+    answer__my.innerText = `目標までは、${n__years.toFixed(2)}年かかります。`;
+
+
+
+  })
+
 
 });
 
